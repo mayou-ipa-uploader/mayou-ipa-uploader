@@ -1,0 +1,10 @@
+Running at path '/Applications/Xcode.app/Contents/SharedFrameworks/ContentDelivery.framework/Resources/'...
+2026-09-30 16:09:01.517 ERROR: [ContentDelivery.Uploader.79B4C6DA40] =======================================
+UPLOAD FAILED with 1 error
+=======================================
+2026-09-30 16:09:01.518 ERROR: [.79B4C6DA40] This bundle is invalid. The value for key CFBundleShortVersionString '1.8.3.2' in the Info.plist file at 'Payload/HXVideoPlayer.app/Frameworks/AlicomCaptcha4.framework' must be a period-separated list of at most three non-negative integers. Please find more information about CFBundleShortVersionString at https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring (90060) n/a (ID: GO5WENE2F6KK3JLQMDCTXN5NJM)
+NSUnderlyingError : A server error occurred. (-19241)
+code : 90060
+deion : This bundle is invalid. The value for key CFBundleShortVersionString '1.8.3.2' in the Info.plist file at 'Payload/HXVideoPlayer.app/Frameworks/AlicomCaptcha4.framework' must be a period-separated list of at most three non-negative integers.
+iris-code : 90060
+2026-09-30 16:09:01.519 ERROR: [.main] ExitFailure (31) Failed to upload package.

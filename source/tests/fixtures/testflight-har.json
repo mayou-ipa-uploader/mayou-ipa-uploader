@@ -1,0 +1,1041 @@
+{
+  "initial": {
+    "preReleaseVersions": {
+      "data": [
+        {
+          "id": "7ba5f6fe-293b-45a3-a724-339373b60156",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.0",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        }
+      ],
+      "included": [],
+      "meta": {
+        "paging": {
+          "total": 1,
+          "limit": 25
+        }
+      }
+    },
+    "buildUploads": {
+      "data": [
+        {
+          "id": "c1e9e719-dd1d-4b3d-9689-0e219354fd9e",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "103",
+            "createdDate": "2026-10-05T19:11:06-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.0",
+            "uploadedDate": "2026-10-05T19:11:58-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "c1e9e719-dd1d-4b3d-9689-0e219354fd9e"
+              }
+            }
+          }
+        },
+        {
+          "id": "19718d08-e94f-4b6e-b212-2fd2f14ff544",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "101",
+            "createdDate": "2026-10-03T22:27:49-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [
+                {
+                  "code": "90068",
+                  "description": "Deployment target too low. Your app targets iOS 13.0. Starting in April 2027, iOS apps must target 15.0 or later to be uploaded to App Store Connect or submitted for distribution."
+                }
+              ],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.0",
+            "uploadedDate": "2026-10-03T22:29:10-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "19718d08-e94f-4b6e-b212-2fd2f14ff544"
+              }
+            }
+          }
+        },
+        {
+          "id": "fcb85555-cae9-4aa7-bfd8-72489d212aaa",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "100",
+            "createdDate": "2026-09-28T01:47:32-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [
+                {
+                  "code": "90068",
+                  "description": "Deployment target too low. Your app targets iOS 13.0. Starting in April 2027, iOS apps must target 15.0 or later to be uploaded to App Store Connect or submitted for distribution."
+                }
+              ],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.0",
+            "uploadedDate": "2026-09-28T01:48:36-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "fcb85555-cae9-4aa7-bfd8-72489d212aaa"
+              }
+            }
+          }
+        }
+      ],
+      "included": [
+        {
+          "id": "fcb85555-cae9-4aa7-bfd8-72489d212aaa",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "c1e9e719-dd1d-4b3d-9689-0e219354fd9e",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "19718d08-e94f-4b6e-b212-2fd2f14ff544",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        }
+      ],
+      "meta": {
+        "paging": {
+          "total": 3,
+          "limit": 30
+        }
+      }
+    },
+    "builds": {
+      "data": [
+        {
+          "id": "c1e9e719-dd1d-4b3d-9689-0e219354fd9e",
+          "type": "builds",
+          "attributes": {
+            "version": "103",
+            "uploadedDate": "2026-10-05T19:13:12-07:00",
+            "expirationDate": "2027-01-03T18:13:12-08:00",
+            "expired": false,
+            "minOsVersion": "15.0",
+            "iconAssetToken": {
+              "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/53/68/76/536876c2-f812-289f-ddc2-10c7841e758d/AppIcon-0-0-2x_U007epad-0-6-0-85-220.png/{w}x{h}bb.{f}",
+              "width": 167,
+              "height": 167
+            },
+            "processingState": "VALID",
+            "usesNonExemptEncryption": false,
+            "deviceFamilies": [
+              "IPHONE",
+              "IPAD"
+            ]
+          },
+          "relationships": {
+            "ciBuildGroup": {
+              "data": null
+            },
+            "preReleaseVersion": {
+              "data": {
+                "type": "preReleaseVersions",
+                "id": "7ba5f6fe-293b-45a3-a724-339373b60156"
+              }
+            },
+            "betaGroups": {
+              "data": []
+            },
+            "betaBuildLocalizations": {
+              "data": []
+            },
+            "betaAppReviewSubmission": {
+              "data": null
+            },
+            "buildBetaDetail": {
+              "data": {
+                "type": "buildBetaDetails",
+                "id": "c1e9e719-dd1d-4b3d-9689-0e219354fd9e"
+              }
+            },
+            "icons": {
+              "data": [
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgYzFlOWU3MTktZGQxZC00YjNkLTk2ODktMGUyMTkzNTRmZDllIEFQUF9TVE9SRSB0cnVl"
+                },
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgYzFlOWU3MTktZGQxZC00YjNkLTk2ODktMGUyMTkzNTRmZDllIEFQUF9TVE9SRSBmYWxzZQ"
+                }
+              ]
+            },
+            "buildBundles": {
+              "data": [
+                {
+                  "type": "buildBundles",
+                  "id": "570744d9-23f8-4a7e-a784-83df4c41ac71"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "19718d08-e94f-4b6e-b212-2fd2f14ff544",
+          "type": "builds",
+          "attributes": {
+            "version": "101",
+            "uploadedDate": "2026-10-03T22:30:25-07:00",
+            "expirationDate": "2027-01-01T21:30:25-08:00",
+            "expired": false,
+            "minOsVersion": "13.0",
+            "iconAssetToken": {
+              "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f5/7e/dc/f57edc2c-698b-ed72-6926-cf3fba7f9b0d/AppIcon-0-0-2x_U007epad-0-6-0-85-220.png/{w}x{h}bb.{f}",
+              "width": 167,
+              "height": 167
+            },
+            "processingState": "VALID",
+            "usesNonExemptEncryption": false,
+            "deviceFamilies": [
+              "IPHONE",
+              "IPAD"
+            ]
+          },
+          "relationships": {
+            "ciBuildGroup": {
+              "data": null
+            },
+            "preReleaseVersion": {
+              "data": {
+                "type": "preReleaseVersions",
+                "id": "7ba5f6fe-293b-45a3-a724-339373b60156"
+              }
+            },
+            "betaGroups": {
+              "data": []
+            },
+            "betaBuildLocalizations": {
+              "data": []
+            },
+            "betaAppReviewSubmission": {
+              "data": null
+            },
+            "buildBetaDetail": {
+              "data": {
+                "type": "buildBetaDetails",
+                "id": "19718d08-e94f-4b6e-b212-2fd2f14ff544"
+              }
+            },
+            "icons": {
+              "data": [
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgMTk3MThkMDgtZTk0Zi00YjZlLWIyMTItMmZkMmYxNGZmNTQ0IEFQUF9TVE9SRSB0cnVl"
+                },
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgMTk3MThkMDgtZTk0Zi00YjZlLWIyMTItMmZkMmYxNGZmNTQ0IEFQUF9TVE9SRSBmYWxzZQ"
+                }
+              ]
+            },
+            "buildBundles": {
+              "data": [
+                {
+                  "type": "buildBundles",
+                  "id": "e659dba4-b984-47b9-ae0f-1a1867cff1ba"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "fcb85555-cae9-4aa7-bfd8-72489d212aaa",
+          "type": "builds",
+          "attributes": {
+            "version": "100",
+            "uploadedDate": "2026-09-28T01:50:16-07:00",
+            "expirationDate": "2026-12-27T00:50:16-08:00",
+            "expired": false,
+            "minOsVersion": "13.0",
+            "iconAssetToken": {
+              "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/8b/42/26/8b4226af-c763-f67e-1b44-8bf073fd584d/AppIcon-0-0-2x_U007epad-0-6-0-85-220.png/{w}x{h}bb.{f}",
+              "width": 167,
+              "height": 167
+            },
+            "processingState": "VALID",
+            "usesNonExemptEncryption": false,
+            "deviceFamilies": [
+              "IPHONE",
+              "IPAD"
+            ]
+          },
+          "relationships": {
+            "ciBuildGroup": {
+              "data": null
+            },
+            "preReleaseVersion": {
+              "data": {
+                "type": "preReleaseVersions",
+                "id": "7ba5f6fe-293b-45a3-a724-339373b60156"
+              }
+            },
+            "betaGroups": {
+              "data": []
+            },
+            "betaBuildLocalizations": {
+              "data": []
+            },
+            "betaAppReviewSubmission": {
+              "data": null
+            },
+            "buildBetaDetail": {
+              "data": {
+                "type": "buildBetaDetails",
+                "id": "fcb85555-cae9-4aa7-bfd8-72489d212aaa"
+              }
+            },
+            "icons": {
+              "data": [
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgZmNiODU1NTUtY2FlOS00YWE3LWJmZDgtNzI0ODlkMjEyYWFhIEFQUF9TVE9SRSB0cnVl"
+                },
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgZmNiODU1NTUtY2FlOS00YWE3LWJmZDgtNzI0ODlkMjEyYWFhIEFQUF9TVE9SRSBmYWxzZQ"
+                }
+              ]
+            },
+            "buildBundles": {
+              "data": [
+                {
+                  "type": "buildBundles",
+                  "id": "0640bfb9-3068-4a33-b44c-61f9d4c63e5a"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "included": [
+        {
+          "id": "7ba5f6fe-293b-45a3-a724-339373b60156",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.0",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "c1e9e719-dd1d-4b3d-9689-0e219354fd9e",
+          "type": "buildBetaDetails",
+          "attributes": {
+            "autoNotifyEnabled": true,
+            "didNotify": false,
+            "internalBuildState": "READY_FOR_BETA_TESTING",
+            "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgYzFlOWU3MTktZGQxZC00YjNkLTk2ODktMGUyMTkzNTRmZDllIEFQUF9TVE9SRSB0cnVl",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgYzFlOWU3MTktZGQxZC00YjNkLTk2ODktMGUyMTkzNTRmZDllIEFQUF9TVE9SRSBmYWxzZQ",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "570744d9-23f8-4a7e-a784-83df4c41ac71",
+          "type": "buildBundles",
+          "attributes": {
+            "bundleId": "com.sujidanciwang.app",
+            "bundleType": "APP"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "19718d08-e94f-4b6e-b212-2fd2f14ff544",
+          "type": "buildBetaDetails",
+          "attributes": {
+            "autoNotifyEnabled": true,
+            "didNotify": false,
+            "internalBuildState": "READY_FOR_BETA_TESTING",
+            "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgMTk3MThkMDgtZTk0Zi00YjZlLWIyMTItMmZkMmYxNGZmNTQ0IEFQUF9TVE9SRSB0cnVl",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgMTk3MThkMDgtZTk0Zi00YjZlLWIyMTItMmZkMmYxNGZmNTQ0IEFQUF9TVE9SRSBmYWxzZQ",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "e659dba4-b984-47b9-ae0f-1a1867cff1ba",
+          "type": "buildBundles",
+          "attributes": {
+            "bundleId": "com.sujidanciwang.app",
+            "bundleType": "APP"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "fcb85555-cae9-4aa7-bfd8-72489d212aaa",
+          "type": "buildBetaDetails",
+          "attributes": {
+            "autoNotifyEnabled": true,
+            "didNotify": false,
+            "internalBuildState": "READY_FOR_BETA_TESTING",
+            "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgZmNiODU1NTUtY2FlOS00YWE3LWJmZDgtNzI0ODlkMjEyYWFhIEFQUF9TVE9SRSB0cnVl",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgZmNiODU1NTUtY2FlOS00YWE3LWJmZDgtNzI0ODlkMjEyYWFhIEFQUF9TVE9SRSBmYWxzZQ",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "0640bfb9-3068-4a33-b44c-61f9d4c63e5a",
+          "type": "buildBundles",
+          "attributes": {
+            "bundleId": "com.sujidanciwang.app",
+            "bundleType": "APP"
+          },
+          "relationships": {}
+        }
+      ],
+      "meta": {
+        "paging": {
+          "total": 3,
+          "limit": 10
+        }
+      }
+    }
+  },
+  "updated": {
+    "preReleaseVersions": {
+      "data": [
+        {
+          "id": "3eaf982c-8c3c-4590-bc46-fff4252371d6",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.3",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "3f6cdf4c-cdcb-45ac-816f-f7476270f3a6",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.2",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "ea02cc20-5ee9-4644-beeb-11be43f75ea8",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.1",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "ad726d3b-1ee3-442c-bcd0-f7bb6e447014",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.0",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        }
+      ],
+      "included": [],
+      "meta": {
+        "paging": {
+          "total": 4,
+          "limit": 25
+        }
+      }
+    },
+    "buildUploads": {
+      "data": [
+        {
+          "id": "a55759f7-2170-4d97-a63e-2de6dfda0b11",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "2",
+            "createdDate": "2026-10-05T06:30:34-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.3",
+            "uploadedDate": "2026-10-05T06:31:32-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "a55759f7-2170-4d97-a63e-2de6dfda0b11"
+              }
+            }
+          }
+        },
+        {
+          "id": "4aefe216-fc36-4f85-94c4-10ae79758fa0",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "1",
+            "createdDate": "2026-10-05T01:59:07-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.3",
+            "uploadedDate": "2026-10-05T02:00:48-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "4aefe216-fc36-4f85-94c4-10ae79758fa0"
+              }
+            }
+          }
+        },
+        {
+          "id": "35d32997-0186-4f0e-86f5-a8225f6d2c6f",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "1",
+            "createdDate": "2026-09-30T01:07:17-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.2",
+            "uploadedDate": "2026-09-30T01:24:46-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "35d32997-0186-4f0e-86f5-a8225f6d2c6f"
+              }
+            }
+          }
+        },
+        {
+          "id": "819a1829-4e2d-47d6-9035-82a7a07be1d4",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "7",
+            "createdDate": "2026-09-28T08:57:26-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.1",
+            "uploadedDate": "2026-09-28T08:58:48-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "819a1829-4e2d-47d6-9035-82a7a07be1d4"
+              }
+            }
+          }
+        },
+        {
+          "id": "c188cff2-abb0-4560-9b76-10d77fc3d7a8",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "4",
+            "createdDate": "2026-09-28T08:23:13-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.1",
+            "uploadedDate": "2026-09-28T08:24:29-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "c188cff2-abb0-4560-9b76-10d77fc3d7a8"
+              }
+            }
+          }
+        },
+        {
+          "id": "0c053d75-3e60-49d5-a30c-4c58226a91b4",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "3",
+            "createdDate": "2026-09-28T08:13:06-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.1",
+            "uploadedDate": "2026-09-28T08:14:24-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "0c053d75-3e60-49d5-a30c-4c58226a91b4"
+              }
+            }
+          }
+        },
+        {
+          "id": "477046ef-27bf-40e0-89ea-5c624a9a5c2b",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "3",
+            "createdDate": "2026-09-23T23:02:25-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.0",
+            "uploadedDate": "2026-09-23T23:03:31-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "477046ef-27bf-40e0-89ea-5c624a9a5c2b"
+              }
+            }
+          }
+        },
+        {
+          "id": "0fcbfd61-54ca-449e-b147-483e82b2d1c2",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "2",
+            "createdDate": "2026-09-20T19:30:06-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.0",
+            "uploadedDate": "2026-09-20T19:31:05-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "0fcbfd61-54ca-449e-b147-483e82b2d1c2"
+              }
+            }
+          }
+        },
+        {
+          "id": "c06b56f6-4549-41c2-8c51-2eef7f185283",
+          "type": "buildUploads",
+          "attributes": {
+            "cfBundleVersion": "1",
+            "createdDate": "2026-09-18T01:43:42-07:00",
+            "state": {
+              "errors": [],
+              "warnings": [],
+              "infos": [],
+              "state": "COMPLETE"
+            },
+            "cfBundleShortVersionString": "1.0.0",
+            "uploadedDate": "2026-09-18T19:10:16-07:00",
+            "platform": "IOS"
+          },
+          "relationships": {
+            "build": {
+              "data": {
+                "type": "builds",
+                "id": "c06b56f6-4549-41c2-8c51-2eef7f185283"
+              }
+            }
+          }
+        }
+      ],
+      "included": [
+        {
+          "id": "819a1829-4e2d-47d6-9035-82a7a07be1d4",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "a55759f7-2170-4d97-a63e-2de6dfda0b11",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "477046ef-27bf-40e0-89ea-5c624a9a5c2b",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "0c053d75-3e60-49d5-a30c-4c58226a91b4",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "4aefe216-fc36-4f85-94c4-10ae79758fa0",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "c06b56f6-4549-41c2-8c51-2eef7f185283",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "35d32997-0186-4f0e-86f5-a8225f6d2c6f",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "c188cff2-abb0-4560-9b76-10d77fc3d7a8",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "0fcbfd61-54ca-449e-b147-483e82b2d1c2",
+          "type": "builds",
+          "attributes": {},
+          "relationships": {}
+        }
+      ],
+      "meta": {
+        "paging": {
+          "total": 9,
+          "limit": 30
+        }
+      }
+    },
+    "builds": {
+      "data": [
+        {
+          "id": "a55759f7-2170-4d97-a63e-2de6dfda0b11",
+          "type": "builds",
+          "attributes": {
+            "version": "2",
+            "uploadedDate": "2026-10-05T06:39:49-07:00",
+            "expirationDate": "2027-01-03T05:39:49-08:00",
+            "expired": false,
+            "minOsVersion": "15.0",
+            "iconAssetToken": {
+              "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/3a/63/2f/3a632fa2-a536-0418-4b03-6f4fe6f8f927/AppIcon60x60@2x.png/{w}x{h}bb.{f}",
+              "width": 120,
+              "height": 120
+            },
+            "processingState": "VALID",
+            "usesNonExemptEncryption": null,
+            "deviceFamilies": [
+              "IPHONE"
+            ]
+          },
+          "relationships": {
+            "ciBuildGroup": {
+              "data": null
+            },
+            "preReleaseVersion": {
+              "data": {
+                "type": "preReleaseVersions",
+                "id": "3eaf982c-8c3c-4590-bc46-fff4252371d6"
+              }
+            },
+            "betaGroups": {
+              "data": []
+            },
+            "betaBuildLocalizations": {
+              "data": [
+                {
+                  "type": "betaBuildLocalizations",
+                  "id": "df6ca826-253a-4cc5-b942-bce99ab28ae3"
+                }
+              ]
+            },
+            "betaAppReviewSubmission": {
+              "data": null
+            },
+            "buildBetaDetail": {
+              "data": {
+                "type": "buildBetaDetails",
+                "id": "a55759f7-2170-4d97-a63e-2de6dfda0b11"
+              }
+            },
+            "icons": {
+              "data": [
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgYTU1NzU5ZjctMjE3MC00ZDk3LWE2M2UtMmRlNmRmZGEwYjExIEFQUF9TVE9SRSB0cnVl"
+                },
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgYTU1NzU5ZjctMjE3MC00ZDk3LWE2M2UtMmRlNmRmZGEwYjExIEFQUF9TVE9SRSBmYWxzZQ"
+                }
+              ]
+            },
+            "buildBundles": {
+              "data": [
+                {
+                  "type": "buildBundles",
+                  "id": "a6087fa3-82a4-458b-ad6b-139410cbaa47"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "4aefe216-fc36-4f85-94c4-10ae79758fa0",
+          "type": "builds",
+          "attributes": {
+            "version": "1",
+            "uploadedDate": "2026-10-05T02:10:11-07:00",
+            "expirationDate": "2027-01-03T01:10:11-08:00",
+            "expired": false,
+            "minOsVersion": "15.0",
+            "iconAssetToken": {
+              "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/99/e7/d999e7fc-ce51-2a6c-4028-40c5508b2827/AppIcon60x60@2x.png/{w}x{h}bb.{f}",
+              "width": 120,
+              "height": 120
+            },
+            "processingState": "VALID",
+            "usesNonExemptEncryption": null,
+            "deviceFamilies": [
+              "IPHONE"
+            ]
+          },
+          "relationships": {
+            "ciBuildGroup": {
+              "data": null
+            },
+            "preReleaseVersion": {
+              "data": {
+                "type": "preReleaseVersions",
+                "id": "3eaf982c-8c3c-4590-bc46-fff4252371d6"
+              }
+            },
+            "betaGroups": {
+              "data": []
+            },
+            "betaBuildLocalizations": {
+              "data": [
+                {
+                  "type": "betaBuildLocalizations",
+                  "id": "1b453c95-0405-4eb7-a660-3bf14cc9dfe7"
+                }
+              ]
+            },
+            "betaAppReviewSubmission": {
+              "data": null
+            },
+            "buildBetaDetail": {
+              "data": {
+                "type": "buildBetaDetails",
+                "id": "4aefe216-fc36-4f85-94c4-10ae79758fa0"
+              }
+            },
+            "icons": {
+              "data": [
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgNGFlZmUyMTYtZmMzNi00Zjg1LTk0YzQtMTBhZTc5NzU4ZmEwIEFQUF9TVE9SRSB0cnVl"
+                },
+                {
+                  "type": "buildIcons",
+                  "id": "YnVpbGQgNGFlZmUyMTYtZmMzNi00Zjg1LTk0YzQtMTBhZTc5NzU4ZmEwIEFQUF9TVE9SRSBmYWxzZQ"
+                }
+              ]
+            },
+            "buildBundles": {
+              "data": [
+                {
+                  "type": "buildBundles",
+                  "id": "66a4ae3f-c9b1-489d-9d39-60ebd5d3bf28"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "included": [
+        {
+          "id": "3eaf982c-8c3c-4590-bc46-fff4252371d6",
+          "type": "preReleaseVersions",
+          "attributes": {
+            "version": "1.0.3",
+            "platform": "IOS"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "df6ca826-253a-4cc5-b942-bce99ab28ae3",
+          "type": "betaBuildLocalizations",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "a55759f7-2170-4d97-a63e-2de6dfda0b11",
+          "type": "buildBetaDetails",
+          "attributes": {
+            "autoNotifyEnabled": true,
+            "didNotify": false,
+            "internalBuildState": "MISSING_EXPORT_COMPLIANCE",
+            "externalBuildState": "MISSING_EXPORT_COMPLIANCE"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgYTU1NzU5ZjctMjE3MC00ZDk3LWE2M2UtMmRlNmRmZGEwYjExIEFQUF9TVE9SRSB0cnVl",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgYTU1NzU5ZjctMjE3MC00ZDk3LWE2M2UtMmRlNmRmZGEwYjExIEFQUF9TVE9SRSBmYWxzZQ",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "a6087fa3-82a4-458b-ad6b-139410cbaa47",
+          "type": "buildBundles",
+          "attributes": {
+            "bundleId": "com.hengxing.huoxing",
+            "bundleType": "APP"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "1b453c95-0405-4eb7-a660-3bf14cc9dfe7",
+          "type": "betaBuildLocalizations",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "4aefe216-fc36-4f85-94c4-10ae79758fa0",
+          "type": "buildBetaDetails",
+          "attributes": {
+            "autoNotifyEnabled": true,
+            "didNotify": false,
+            "internalBuildState": "MISSING_EXPORT_COMPLIANCE",
+            "externalBuildState": "MISSING_EXPORT_COMPLIANCE"
+          },
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgNGFlZmUyMTYtZmMzNi00Zjg1LTk0YzQtMTBhZTc5NzU4ZmEwIEFQUF9TVE9SRSB0cnVl",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "YnVpbGQgNGFlZmUyMTYtZmMzNi00Zjg1LTk0YzQtMTBhZTc5NzU4ZmEwIEFQUF9TVE9SRSBmYWxzZQ",
+          "type": "buildIcons",
+          "attributes": {},
+          "relationships": {}
+        },
+        {
+          "id": "66a4ae3f-c9b1-489d-9d39-60ebd5d3bf28",
+          "type": "buildBundles",
+          "attributes": {
+            "bundleId": "com.hengxing.huoxing",
+            "bundleType": "APP"
+          },
+          "relationships": {}
+        }
+      ],
+      "meta": {
+        "paging": {
+          "total": 2,
+          "limit": 10
+        }
+      }
+    }
+  }
+}

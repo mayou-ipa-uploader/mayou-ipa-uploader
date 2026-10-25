@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <link rel="icon" href="./assets/icons/certificate-manager-logo.png" type="image/png">
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{display:flex;flex-direction:column;height:100vh;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;overflow:hidden}
+#tabbar{display:flex;align-items:center;height:40px;background:#d1d5e0;padding:0 4px;gap:2px;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth}
+#tabbar::-webkit-scrollbar{height:3px}
+#tabbar::-webkit-scrollbar-thumb{background:#aab1c0;border-radius:999px}
+.tab{display:flex;align-items:center;height:33px;padding:0 8px;background:#e8eaef;border-radius:6px 6px 0 0;font-size:12px;color:#4a5568;white-space:nowrap;cursor:pointer;width:148px;min-width:38px;max-width:148px;flex:0 0 auto;transition:background .12s ease,color .12s ease}
+.tab.active{background:#fff;font-weight:600;color:#1d1d1f;width:148px;min-width:148px;max-width:148px}
+.tab.icon-only{width:38px;min-width:38px;max-width:38px;padding:0;justify-content:center}
+.tab.icon-only.active{width:148px;min-width:148px;max-width:148px;padding:0 8px;justify-content:flex-start}
+.tab.home-tab{width:38px;min-width:38px;max-width:38px;padding:0;justify-content:center;font-size:17px;position:sticky;left:4px;z-index:3;box-shadow:4px 0 0 #d1d5e0}
+.tab.home-tab.active{width:38px;min-width:38px;max-width:38px}
+.tab.home-tab .title{display:none}
+.tab.home-tab .close{display:none}
+.tab-favicon{width:16px;height:16px;border-radius:3px;object-fit:contain;display:block;flex:0 0 16px;margin-right:7px}
+.tab-favicon.fallback{border-radius:50%;background:#798292;color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;line-height:16px}
+.tab.icon-only:not(.active) .title,.tab.icon-only:not(.active) .close{display:none}
+.tab.icon-only:not(.active) .tab-favicon{margin-right:0}
+.tab .title{overflow:hidden;text-overflow:ellipsis;flex:1;margin-right:4px;min-width:0}
+.tab .close{font-size:14px;color:#86868b;padding:0 4px;border-radius:3px;line-height:1;flex:0 0 auto}
+.tab .close:hover{background:#d0d0d5;color:#e74c3c}
+#add-tab{width:34px;height:33px;display:flex;align-items:center;justify-content:center;margin-left:auto;font-size:18px;color:#86868b;padding:0;cursor:pointer;border-radius:6px;flex:0 0 34px;position:sticky;right:4px;z-index:4;background:#d1d5e0;box-shadow:-6px 0 0 #d1d5e0}
+#add-tab:hover{background:#c8ccd8}
+#toolbar{display:flex;align-items:center;height:44px;background:#fff;padding:0 8px;gap:6px;border-bottom:1px solid #dde2ea}
+#toolbar button{width:32px;height:32px;border:none;background:#f0f2f5;border-radius:6px;font-size:16px;cursor:pointer;color:#4a5568;display:flex;align-items:center;justify-content:center}
+#toolbar button:hover{background:#e0e3e8}
+#toolbar button:disabled{opacity:.35;cursor:default}
+.toolbar-icon{width:24px;height:24px;object-fit:contain;display:block;pointer-events:none}
+#btn-more.active{background:#ded6e6}
+#btn-downloads.active{background:#ded6e6}
+#btn-downloads{position:relative;color:#6f35c8;font-weight:700}
+#btn-downloads.downloading{background:conic-gradient(#8b3fd7 var(--download-progress,0%),#eee6f4 0);border-radius:50%}
+#btn-downloads.downloading:before{content:"";position:absolute;inset:4px;background:#fff;border-radius:50%;z-index:0}
+#btn-downloads.done:after,#btn-downloads.downloading:after{content:"";position:absolute;left:9px;right:9px;bottom:2px;height:3px;border-radius:3px;background:#8b3fd7}
+#btn-downloads .toolbar-icon{position:relative;z-index:1;width:24px;height:24px}
+#progress-bar{height:3px;background:#eef2f7;position:relative;z-index:1000;overflow:hidden;opacity:0;transition:opacity .18s ease;flex-shrink:0}
+#progress-bar .fill{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#2563eb);transition:width .22s ease;border-radius:0 2px 2px 0;box-shadow:0 0 10px rgba(37,99,235,.45)}
+#progress-bar.loading{opacity:1}
+#progress-bar.done{opacity:0;transition:opacity .35s ease}
+#loading-chip{height:24px;min-width:66px;padding:0 8px;border-radius:12px;background:#eaf2ff;color:#1769e0;font-size:12px;font-weight:600;display:none;align-items:center;justify-content:center;gap:5px;flex-shrink:0}
+#loading-chip.show{display:flex}
+#loading-chip .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 rgba(34,197,94,.45);animation:pulse 1s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 6px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+#url-shell{position:relative;flex:1;min-width:120px}
+#url-bar{width:100%;height:32px;padding:0 34px 0 12px;border:1px solid #d0d5dd;border-radius:16px;font-size:13px;outline:none;background:#f6f7f9}
+#url-bar:focus{border-color:#1769e0;background:#fff}
+#url-bar.readonly{color:#9aa0aa;background:#eef0f4;cursor:default;user-select:none}
+#url-bar.readonly:focus{border-color:#d0d5dd;background:#eef0f4}
+#toolbar #url-clear{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:24px;height:24px;border:0;border-radius:50%;background:transparent;color:#6b7280;display:none;align-items:center;justify-content:center;font-size:18px;line-height:1;cursor:pointer;padding:0}
+#url-shell.has-value #url-clear{display:flex}
+#toolbar #url-clear:hover{background:#e5ddea}
+#url-suggestions{position:fixed;left:168px;right:210px;top:84px;background:#fff;border:1px solid #ece4f0;border-radius:14px;box-shadow:0 16px 38px rgba(28,20,40,.22);z-index:9200;padding:8px;display:none;max-height:420px;overflow:auto}
+#url-suggestions.show{display:block}
+.suggestion-row{min-height:42px;border-radius:10px;display:grid;grid-template-columns:28px minmax(0,1fr) 26px;align-items:center;gap:10px;padding:0 10px;cursor:pointer;color:#29252f}
+.suggestion-row:hover,.suggestion-row.active{background:#f0eaf3}
+.suggestion-icon{width:18px;height:18px;border-radius:50%;background:#5f6068;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px}
+.suggestion-title{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.suggestion-url{font-size:12px;color:#7b5da6;margin-left:6px}
+.suggestion-delete{width:24px;height:24px;border:0;border-radius:50%;background:transparent;color:#6b7280;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.suggestion-delete:hover{background:#e5ddea}
+.newtab-page{width:100%;height:100%;background:#fff;display:flex;align-items:flex-start;justify-content:center;padding:120px 36px 48px;color:#29252f;overflow:auto}
+.newtab-center{width:min(1120px,100%);display:flex;flex-direction:column;align-items:center}
+.newtab-brand{font-size:82px;line-height:1;font-weight:700;color:#6e529c;margin:0 0 54px;letter-spacing:0}
+.newtab-search{width:min(760px,82vw);height:56px;border-radius:999px;background:#fff;box-shadow:0 2px 10px rgba(52,39,70,.18);display:grid;grid-template-columns:48px minmax(0,1fr) 78px;align-items:center;margin:0 0 32px;overflow:hidden}
+.newtab-search-plus{font-size:28px;color:#242832;text-align:center;line-height:1}
+.newtab-search-input{width:100%;height:100%;border:0;background:transparent;outline:none;font-size:17px;color:#242832}
+.newtab-search-input::placeholder{color:#a7a3ad}
+.newtab-search-submit{height:36px;margin-right:10px;border:0;border-radius:18px;background:#f3f1f5;color:#29252f;font-size:14px;font-weight:600;cursor:pointer}
+.newtab-search-submit:hover{background:#ebe6ef}
+.top-sites{width:min(1000px,100%);display:grid;grid-template-columns:repeat(auto-fit,96px);gap:26px 34px;justify-content:center;align-content:start}
+.top-site{width:96px;min-height:108px;border:0;background:transparent;display:flex;flex-direction:column;align-items:center;gap:12px;cursor:pointer;color:#20242a;font-size:13px;min-width:0;border-radius:12px;padding:10px 2px}
+.top-site:hover{background:rgba(104,76,130,.08)}
+.top-site:hover .top-site-icon{background:#e7dfec}
+.top-site-icon{width:56px;height:56px;border-radius:50%;background:#f0eaf5;color:#4a3d5a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;position:relative;overflow:hidden}
+.top-site-icon img{width:32px;height:32px;object-fit:contain;display:block}
+.top-site-fallback{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#d8d0df;color:#fff;font-weight:800}
+.top-site-title{max-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;line-height:1.25}
+.top-site.add-shortcut .top-site-icon,.top-site.expand .top-site-icon{font-size:26px;color:#4a3d5a}
+#bookmarkbar{height:38px;background:#fff;border-bottom:1px solid #eee2f2;display:flex;align-items:center;gap:4px;padding:0 12px;overflow:visible;flex-shrink:0;color:#3f3d46}
+.bookmark-apps{width:28px;height:28px;border:0;background:transparent;border-radius:6px;color:#5f6068;font-size:17px;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer}
+.bookmark-apps:hover{background:#f0eaf5}
+.bookmark-divider{width:1px;height:22px;background:#dfd4e8;margin:0 8px;flex-shrink:0}
+.bookmark-spacer{flex:1;min-width:18px}
+.bookmark-item,.bookmark-folder,.bookmark-all{height:28px;border:0;background:transparent;border-radius:5px;padding:0 7px;font-size:13px;color:#3f3d46;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;cursor:pointer;position:relative;flex-shrink:0;max-width:220px}
+.bookmark-item:hover,.bookmark-folder:hover,.bookmark-all:hover,.bookmark-apps:hover{background:#f0eaf5}
+.bookmark-icon{width:16px;height:16px;border-radius:3px;object-fit:contain;flex-shrink:0}
+.bookmark-fallback{width:16px;height:16px;border-radius:50%;background:#4b5563;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.bookmark-folder-icon{width:18px;height:14px;border:2px solid #5f6068;border-top-width:5px;border-radius:2px;display:inline-block;position:relative;flex-shrink:0}
+.bookmark-folder-icon:before{content:"";position:absolute;left:-2px;top:-8px;width:9px;height:5px;background:#fff;border:2px solid #5f6068;border-bottom:0;border-radius:2px 2px 0 0}
+.bookmark-title{overflow:hidden;text-overflow:ellipsis}
+.bookmark-menu{position:absolute;top:31px;left:0;min-width:210px;background:#fff;border:1px solid #e4e8ef;border-radius:8px;box-shadow:0 12px 28px rgba(16,24,40,.16);padding:6px;z-index:5000;display:none}
+.bookmark-folder.open .bookmark-menu{display:block}
+.bookmark-menu div{height:32px;border-radius:6px;display:flex;align-items:center;gap:7px;padding:0 8px;font-size:13px;color:#394150}
+.bookmark-menu div:hover{background:#f3f6fb}
+#content{flex:1;position:relative;overflow:hidden;background:#fff}
+.tab-content{position:absolute;inset:0;display:none;background:#fff}
+.tab-content.active{display:flex}
+.tab-content webview{width:100%;height:100%;border:none;background:#fff}
+#status{height:22px;background:#f0f2f5;padding:0 12px;font-size:11px;color:#86868b;display:flex;align-items:center;border-top:1px solid #e5e7eb}
+#network-panel{height:330px;flex:0 0 330px;background:#fff;border-top:1px solid #cfd5df;display:none;flex-direction:column;color:#252a34;font-size:12px;min-height:180px}
+#network-panel.show{display:flex}
+.network-toolbar{height:38px;display:flex;align-items:center;gap:7px;padding:0 9px;border-bottom:1px solid #e2e6ed;background:#f7f8fa}
+.network-toolbar button{height:26px;border:1px solid #cfd5df;background:#fff;border-radius:5px;padding:0 9px;cursor:pointer}
+.network-toolbar button.recording{color:#d92d20;border-color:#f0a8a2;background:#fff3f2}
+#network-filter{width:260px;height:26px;border:1px solid #cfd5df;border-radius:5px;padding:0 8px;outline:none}
+#network-count{margin-left:auto;color:#667085}
+.network-main{display:grid;grid-template-columns:minmax(440px,58%) 1fr;min-height:0;flex:1}
+.network-table-wrap{overflow:auto;border-right:1px solid #e2e6ed}
+.network-grid{display:grid;grid-template-columns:58px minmax(210px,1fr) 62px 74px 72px;align-items:center;min-height:27px;border-bottom:1px solid #eef0f4;padding:0 7px;gap:7px}
+.network-grid.head{position:sticky;top:0;background:#f7f8fa;font-weight:600;z-index:1}
+.network-row{cursor:pointer}.network-row:hover,.network-row.active{background:#edf4ff}
+.network-cell{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.network-status.bad{color:#d92d20}.network-method{font-weight:600}
+#network-detail{overflow:auto;padding:10px 12px;white-space:pre-wrap;word-break:break-word;font:11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#fbfcfd}
+#browser-more-menu{position:fixed;right:8px;top:80px;width:330px;max-height:calc(100vh - 100px);overflow:auto;background:#fff;border:1px solid rgba(95,85,110,.22);border-radius:14px;box-shadow:0 18px 42px rgba(25,20,35,.22);z-index:9000;padding:10px 0;display:none;color:#29252f}
+#browser-more-menu.show{display:block}
+.more-section{padding:6px 0;border-bottom:1px solid #ece4f0}
+.more-section:last-child{border-bottom:0}
+.more-row{height:36px;display:grid;grid-template-columns:32px 1fr auto;align-items:center;gap:10px;padding:0 18px;font-size:15px;cursor:pointer}
+.more-row:hover{background:#f3edf8}
+.more-row.disabled{opacity:.42;cursor:default}
+.more-row.disabled:hover{background:transparent}
+.more-icon{width:22px;text-align:center;color:#5d5667;font-size:17px}
+.more-sub{color:#726b78;font-size:13px}
+.more-shortcut{color:#5c5663;font-size:13px;padding-left:10px}
+.more-profile{margin:8px 12px;height:40px;border-radius:14px;background:#f0e8f5;display:grid;grid-template-columns:34px 1fr auto 18px;align-items:center;gap:10px;padding:0 12px;font-size:15px;cursor:pointer}
+.more-avatar{width:28px;height:28px;border-radius:50%;background:#6333b7;color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+.zoom-row{height:42px;display:grid;grid-template-columns:32px 1fr auto auto auto auto;align-items:center;gap:10px;padding:0 18px;font-size:15px}
+.zoom-btn{width:30px;height:30px;border:0;border-radius:50%;background:#f0eaf5;color:#29252f;font-size:18px;cursor:pointer}
+.zoom-value{min-width:54px;text-align:center}
+#find-box{position:fixed;right:12px;top:86px;z-index:9100;background:#fff;border:1px solid #d8dce5;border-radius:8px;box-shadow:0 12px 30px rgba(16,24,40,.18);height:42px;display:none;align-items:center;gap:6px;padding:0 8px}
+#find-box.show{display:flex}
+#find-input{width:220px;height:28px;border:1px solid #d0d5dd;border-radius:6px;padding:0 8px;outline:none}
+#find-box button{width:26px;height:26px;border:0;background:#f1f3f7;border-radius:5px;cursor:pointer}
+#download-panel{position:fixed;right:52px;top:80px;width:360px;max-height:460px;background:#fff;border:1px solid rgba(95,85,110,.22);border-radius:14px;box-shadow:0 18px 42px rgba(25,20,35,.22);z-index:9050;display:none;overflow:hidden;color:#29252f}
+#download-panel.show{display:block}
+.download-head{height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid #ece4f0;font-size:15px;font-weight:700}
+.download-list{max-height:360px;overflow:auto;padding:8px}
+.download-item{display:grid;grid-template-columns:34px 1fr auto;gap:8px;align-items:center;min-height:66px;border-radius:8px;padding:8px;cursor:pointer}
+.download-item:hover{background:#f5f0f8}
+.download-file-icon{width:28px;height:32px;border:1px solid #cfd4dc;border-radius:4px;background:#f8fafc;display:flex;align-items:center;justify-content:center;font-size:13px;color:#596174}
+.download-title{font-size:13px;color:#242832;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.download-meta{font-size:11px;color:#818898;margin-top:3px}
+.download-state{font-size:11px;color:#6b7280;white-space:nowrap}
+.download-progress{height:4px;background:#ece7f2;border-radius:999px;overflow:hidden;margin-top:7px}
+.download-progress span{display:block;height:100%;width:0;background:#8b3fd7;border-radius:999px;transition:width .2s ease}
+.download-actions{display:flex;align-items:center;gap:8px}
+.download-folder{width:28px;height:28px;border:0;border-radius:6px;background:#f0eaf5;color:#5d5667;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.download-folder img{width:20px;height:20px;object-fit:contain;pointer-events:none}
+.download-folder:hover{background:#e3d7ee;color:#6f35c8}
+.download-empty{padding:36px 16px;text-align:center;color:#8a94a6;font-size:13px}
+.download-foot{height:38px;border-top:1px solid #ece4f0;display:flex;align-items:center;justify-content:flex-end;padding:0 12px}
+.download-foot button{border:0;background:#f0eaf5;border-radius:6px;padding:6px 10px;font-size:12px;cursor:pointer}
+/* IP Home Page (embedded in tab) */
+.home-wrap{width:720px;margin:30px auto 0;background:white;box-shadow:0 2px 16px rgba(0,0,0,.18);height:fit-content;overflow-y:auto}
+.home-wrap .topline{height:4px;background:#4b7cf5}
+.home-wrap .ad{height:42px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#2f66f6;background:#fff}
+.home-wrap .blue{background:#4a77f0;color:white;text-align:center;padding:10px 24px 18px}
+.home-wrap .ip-text{font-size:38px;line-height:1.15;font-weight:300;letter-spacing:.5px;margin-bottom:6px}
+.home-wrap .copy{display:inline-block;border:2px solid rgba(255,255,255,.72);border-radius:3px;width:17px;height:17px;margin-left:8px;vertical-align:middle;position:relative;top:-3px;cursor:pointer}
+.home-wrap .btns{display:flex;gap:16px;justify-content:center;margin:4px 0 16px}
+.home-wrap .mini{background:#36c9d6;border-radius:4px;padding:7px 16px;color:white;font-size:13px;font-weight:600;cursor:pointer;border:none}
+.home-wrap .mini:hover{background:#2db8c4}
+.home-wrap .pill{display:inline-block;border:1px dashed rgba(255,255,255,.55);border-radius:6px;padding:8px 18px;margin:0 0 9px;color:#eaffff;font-size:13px;font-weight:700}
+.home-wrap .meta{display:inline-flex;gap:20px;border:1px dashed rgba(255,255,255,.55);border-radius:5px;padding:9px 16px;font-size:13px;font-weight:700}
+.home-wrap .checks{margin-top:9px}
+.home-wrap .checks span{display:inline-block;border:1px dashed rgba(255,255,255,.55);border-radius:5px;padding:8px 16px;font-size:13px;font-weight:700}
+.home-wrap .checks a{color:white;text-decoration:underline;margin-left:6px;cursor:pointer}
+.home-wrap .table{padding:4px 10px 0;background:#fff}
+.home-wrap .row{display:grid;grid-template-columns:100px 1fr;border-bottom:1px solid #e5e7eb;min-height:43px;align-items:center;font-size:14px}
+.home-wrap .lbl{color:#9aa0aa;text-align:right;padding-right:18px}
+.home-wrap .val{color:#596174;font-weight:500}
+.login-placeholder{color:#98a2b3;font-weight:500}
+.home-wrap .muted{color:#a0a6b0}
+.home-wrap .footer{height:34px;display:flex;align-items:center;justify-content:center;color:#a0a6b0;font-size:12px;background:#fff}
+.home-wrap .url-row{display:flex;padding:12px 24px;background:#fff;gap:0;border-top:1px solid #edf0f4}
+.home-wrap .url-row input{flex:1;padding:10px 16px;border:2px solid #e0e0e0;border-radius:6px 0 0 6px;font-size:14px;outline:none}
+.home-wrap .url-row input:focus{border-color:#4b7cf5}
+.home-wrap .url-row button{padding:10px 22px;border:2px solid #4b7cf5;border-radius:0 6px 6px 0;background:#4b7cf5;color:#fff;font-size:14px;cursor:pointer;font-weight:600}
+.home-wrap .actions{display:flex;gap:12px;justify-content:center;padding:10px 24px 18px;background:#fff}
+.home-wrap .actions button{padding:6px 20px;border:1px solid #4b7cf5;border-radius:6px;background:#fff;color:#4b7cf5;font-size:13px;cursor:pointer;font-weight:500}
+.home-wrap .actions button:hover{background:#f0f4ff}
+.home-wrap .actions button.primary{background:#4b7cf5;color:#fff}
+.home-wrap .toast-wrap{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#1d1d1f;color:#fff;padding:8px 20px;border-radius:6px;font-size:13px;z-index:999;display:none}
+/* IP Guard banner */
+#ip-guard-banner{display:none;height:28px;background:#e74c3c;color:#fff;font-size:12px;font-weight:600;align-items:center;justify-content:center;gap:8px}
+#ip-guard-banner.show{display:flex}
+#ip-guard-banner button{padding:2px 10px;border:1px solid #fff;border-radius:4px;background:transparent;color:#fff;font-size:11px;cursor:pointer}
+#btn-ip.changed{background:#e74c3c;color:#fff;animation:blink 0.8s infinite}
+@keyframes blink{50%{opacity:.5}}
+@media (max-width:900px){
+  .newtab-page{padding:78px 18px 36px}
+  .newtab-brand{font-size:56px;margin-bottom:34px}
+  .newtab-search{width:min(680px,94vw);height:52px;grid-template-columns:44px minmax(0,1fr) 70px;margin-bottom:26px}
+  .top-sites{grid-template-columns:repeat(auto-fit,88px);gap:20px 22px}
+  .top-site{width:88px}
+  .top-site-title{max-width:86px}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"><div class="fill"></div></div>
+<div id="tabbar"></div>
+<div id="toolbar">
+  <button id="btn-back" title="后退" onclick="goBack()"><img id="icon-back" class="toolbar-icon" src="./assets/icons/back-disabled.png" alt="" /></button>
+  <button id="btn-forward" title="前进" onclick="goForward()"><img id="icon-forward" class="toolbar-icon" src="./assets/icons/forward-disabled.png" alt="" /></button>
+  <button id="btn-reload" title="刷新" onclick="reload()"><img class="toolbar-icon" src="./assets/icons/refresh.png" alt="" /></button>
+  <div id="url-shell">
+    <input id="url-bar" type="text" placeholder="输入网址…" autocomplete="off" oninput="onURLInput()" onfocus="onURLFocus()" onkeydown="handleURLKeydown(event)" />
+    <button id="url-clear" title="清除" onclick="clearURLBar(event)">×</button>
+  </div>
+  <div id="loading-chip"><span class="dot"></span><span id="progress-text">0%</span></div>
+  <button id="btn-ip" title="IP 信息" onclick="showIPInfo()" style="font-size:12px;width:auto;padding:0 10px">IP</button>
+  <button id="btn-downloads" title="下载内容" onclick="toggleDownloadsPanel(event)"><img class="toolbar-icon" src="./assets/icons/download.png" alt="" /></button>
+  <button id="btn-more" onclick="showMore(event)" style="font-size:14px">⋮</button>
+</div>
+<div id="browser-more-menu"></div>
+<div id="url-suggestions"></div>
+<div id="download-panel">
+  <div class="download-head"><span>下载内容</span><span id="download-count">0</span></div>
+  <div class="download-list" id="download-list"></div>
+  <div class="download-foot"><button onclick="openDownloadsFolder()">打开下载文件夹</button></div>
+</div>
+<div id="find-box">
+  <input id="find-input" type="text" placeholder="查找" onkeydown="handleFindKey(event)" />
+  <button title="上一个" onclick="findPrevious()">‹</button>
+  <button title="下一个" onclick="findNext()">›</button>
+  <button title="关闭" onclick="closeFindBox()">×</button>
+</div>
+<div id="bookmarkbar"></div>
+<div id="ip-guard-banner"><span>⚠ 出口 IP 已变化，请停止继续访问。</span><button onclick="dismissGuard()">忽略</button><button onclick="refreshGuardIP()">重新检测</button></div>
+<div id="content"></div>
+<div id="network-panel">
+  <div class="network-toolbar">
+    <button id="network-record" onclick="toggleNetworkRecording()">● 开始抓包</button>
+    <button onclick="clearNetworkLog()">清空</button>
+    <button onclick="exportNetworkHAR()">导出 HAR</button>
+    <input id="network-filter" placeholder="筛选 URL / 方法 / 状态" oninput="renderNetworkRows()" />
+    <span id="network-count">0 个请求</span>
+    <button onclick="closeNetworkPanel()">×</button>
+  </div>
+  <div class="network-main">
+    <div class="network-table-wrap"><div class="network-grid head"><span>方法</span><span>名称</span><span>状态</span><span>类型</span><span>耗时</span></div><div id="network-list"></div></div>
+    <div id="network-detail">选择一条请求查看详情。\nAuthorization、Cookie 等敏感请求头默认脱敏。</div>
+  </div>
+</div>
+<div id="status">就绪</div>
+<div class="toast-wrap" id="toast"></div>
+<div id="ip-guard-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:99999;align-items:center;justify-content:center">
+<div style="background:#fff;border-radius:14px;padding:36px 44px;text-align:center;max-width:440px;box-shadow:0 12px 40px rgba(0,0,0,.25)">
+<div style="font-size:52px;margin-bottom:14px">⚠️</div>
+<div style="font-size:18px;font-weight:700;color:#e74c3c;margin-bottom:6px">出口 IP 已变化</div>
+<div style="font-size:14px;color:#4a5568;line-height:1.6;margin-bottom:4px" id="ip-guard-msg">检测到出口 IP 已发生变化，浏览器已停止所有网络请求。</div>
+<div style="font-size:12px;color:#86868b;margin-bottom:20px">请关闭此浏览器窗口，重新打开以确保使用正确的 IP 环境。</div>
+<button id="ip-guard-ok" style="padding:10px 48px;border:none;border-radius:8px;background:#e74c3c;color:#fff;font-size:15px;font-weight:600;cursor:pointer" onclick="window.__closeBrowser()">确定 · 关闭浏览器</button>
+</div></div>
+<script src="./browser.js"></script>
+</body>
+</html>

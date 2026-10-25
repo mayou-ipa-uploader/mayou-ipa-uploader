@@ -1,0 +1,33 @@
+{
+  "name": "apple-certificate-manager",
+  "version": "0.1.388",
+  "private": true,
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "node scripts/start.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.js",
+    "package:mac": "bash scripts/package-macos.sh",
+    "package:windows": "bash scripts/package-windows.sh",
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "build:guard": "node scripts/build-upload-guard.mjs"
+  },
+  "dependencies": {
+    "bplist-parser": "^0.5.0",
+    "i18n-iso-countries": "^7.14.0",
+    "node-forge": "^1.4.0",
+    "plist": "^3.1.1",
+    "pngjs": "^7.0.0",
+    "qrcode": "^1.5.4",
+    "yauzl": "^3.4.0"
+  },
+  "devDependencies": {
+    "electron": "^43.1.1",
+    "typescript": "^5.5.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}

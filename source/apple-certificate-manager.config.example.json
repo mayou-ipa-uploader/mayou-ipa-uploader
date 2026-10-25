@@ -1,0 +1,7 @@
+{
+  "developmentMode": true,
+  "domains": {
+    "development": "http://localhost:5051/",
+    "production": "https://similarity.msykeji.com"
+  }
+}

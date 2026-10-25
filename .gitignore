@@ -1,0 +1,37 @@
+# 依赖、构建产物和安装包（安装包使用 Releases 分发）
+**/node_modules/
+**/dist/
+**/build/
+*.dmg
+*.zip
+*.exe
+GitHub效果预览.html
+
+# 本地账户、密钥、数据和日志
+.DS_Store
+._*
+.env
+.env.*
+!.env.example
+*.p8
+*.p12
+*.pfx
+*.key
+*.pem
+*.db
+*.db-*
+*.sqlite*
+*.log
+!source/tests/fixtures/*.log
+source/work/
+source/apple-certificate-manager.config.json
+source/daemon/ipauploader-daemon
+source/daemon/ipauploader-daemon.exe
+source/uploader-bin/
+source/vendor/itms/
+source/vendor/ipa-upload-guard/*.jar
+
+# 仅本地保留的原图与发布导出目录
+/private-originals/
+/待上传仓库/
+*.partial

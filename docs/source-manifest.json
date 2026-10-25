@@ -1,0 +1,750 @@
+{
+  "sourceVersion": "0.1.388",
+  "files": [
+    {
+      "path": "README.md",
+      "size": 4330,
+      "sha256": "4ecefd2317651bd5160fd9592e2b2c16f16fe5bd93ea742c22fc1ffaadcb790b"
+    },
+    {
+      "path": "apple-certificate-manager.config.example.json",
+      "size": 146,
+      "sha256": "d07c3606c7b931a6c898ad78c46cd49f4a35ef88f165101ea722904eb8972390"
+    },
+    {
+      "path": "appstore_providers.py",
+      "size": 1878,
+      "sha256": "42d06ccd27e34790a837d57168a9e7125113d00088df5ae580ffaec3465dc536"
+    },
+    {
+      "path": "appstore_upload_errors.py",
+      "size": 781,
+      "sha256": "80fdb1ca8bd45f67801166f77a92bee8024fb97fe0da2f93ed151c36eadfd517"
+    },
+    {
+      "path": "assets/app-icons/CertificateManagerIcon.icns",
+      "size": 1155227,
+      "sha256": "037d9714e85bc7257d118d6a1d3565463872ad43d08f017bff482a39bd54ce7b"
+    },
+    {
+      "path": "assets/app-icons/CertificateManagerIcon.ico",
+      "size": 78950,
+      "sha256": "30f5bc939dc22bb67c95470f9590d7d7c8b31097106f4e86b056a8e0a2f81677"
+    },
+    {
+      "path": "assets/app-icons/CertificateManagerIcon.png",
+      "size": 891721,
+      "sha256": "6173664d58fe20380b982e3a244fd2effb5544368e5022bbfaa50e007c468513"
+    },
+    {
+      "path": "daemon/go.mod",
+      "size": 35,
+      "sha256": "33cb37a0c838bfcdd2cb7c0e0c243b8e163ba2ba8aa0699510d0fa585c05462a"
+    },
+    {
+      "path": "daemon/main.go",
+      "size": 32846,
+      "sha256": "9f67b5f2791e68f371dcd19f9fef89998e5c10e1f23b81d7c5004a36d2b3cfd3"
+    },
+    {
+      "path": "package-lock.json",
+      "size": 22074,
+      "sha256": "a5cf0f48c080ade4f4d16b05ef6674d9ea9fb6074559ea1354bf577d928831cd"
+    },
+    {
+      "path": "package.json",
+      "size": 844,
+      "sha256": "ac563df25f845aa1797587fedc0ad2fe8ce826fdcd8f43081c8fc53d7545127f"
+    },
+    {
+      "path": "scripts/build-upload-guard.mjs",
+      "size": 2336,
+      "sha256": "9567185dc66fa13e6cacecd57697ae2d35c8f5bfd9a562ac24f9c4f7d95ef187"
+    },
+    {
+      "path": "scripts/build-upload-guard.sh",
+      "size": 1415,
+      "sha256": "8298daae74abcb9ff2b97ac4e1b3dd71afb5bf66d42bb5b4bea48d4808871b34"
+    },
+    {
+      "path": "scripts/create-dmg-background.js",
+      "size": 5561,
+      "sha256": "d12df47245429ba19675e1fea805605fc02aa114fe4ad95d66dd4d060c014347"
+    },
+    {
+      "path": "scripts/doctor.mjs",
+      "size": 1604,
+      "sha256": "6b953e2addce48071fdb94d827aa92d31e9708d7850cf316fe2910fe6d719ff5"
+    },
+    {
+      "path": "scripts/java-tools.mjs",
+      "size": 1014,
+      "sha256": "309cc86b75e1bbb82e87dd31c0d2bd6ae5742ef9447540c597016f3db0dedafb"
+    },
+    {
+      "path": "scripts/java/TransporterBuildGuard.java",
+      "size": 5271,
+      "sha256": "557adcbcb8a6e635b55bc1a197891d19b7b5d2b3a53273830a15c33a37718c43"
+    },
+    {
+      "path": "scripts/package-macos.sh",
+      "size": 10336,
+      "sha256": "f315ee5b2cf610e8a4fb80ae1dbdde169afbfd0c882d3e071ecdc253ef6805d4"
+    },
+    {
+      "path": "scripts/package-windows.sh",
+      "size": 9235,
+      "sha256": "6480ad151bca3122e2888fb2beb5a9b1d62a5df1c6f1ee9fa7667b0e95a2738d"
+    },
+    {
+      "path": "scripts/setup.mjs",
+      "size": 930,
+      "sha256": "f99faabf9aa71194c40ada91e44355403efe820cd654dd806cef8cf51cff784b"
+    },
+    {
+      "path": "scripts/start.mjs",
+      "size": 889,
+      "sha256": "bbce9fdc06e5b0bf9f3cab503dad27adb20cef4c4287c14dc57d5d06ec225408"
+    },
+    {
+      "path": "scripts/windows/iTMSTransporter.cmd",
+      "size": 1460,
+      "sha256": "1feda74aa8bf7e9934b1c2e01065f5b40c66177f231e6ab15524968b09426e2f"
+    },
+    {
+      "path": "scripts/windows/installer.nsi",
+      "size": 4275,
+      "sha256": "d4bb533614677c0079df19c1c44dd0a2d932c4fc04f0edbfdaeb623709456a2b"
+    },
+    {
+      "path": "src/app-review-attachments.js",
+      "size": 10287,
+      "sha256": "9c9bf5c7505be7a148321490fc7a85dd2fa7324d952c4d437326bdfbb9ec0f5c"
+    },
+    {
+      "path": "src/app-version-rules.js",
+      "size": 1218,
+      "sha256": "89aa4daa6d0c8661da5c0d63b35cfd86939c2988ec5a39ea55858546260607ad"
+    },
+    {
+      "path": "src/apple-auth-client.js",
+      "size": 48111,
+      "sha256": "74bf50d242d43bf4d052f22379cfaf2858197fe18389d9f3bbb00a0d5747caa7"
+    },
+    {
+      "path": "src/apple-client-fingerprint.js",
+      "size": 8520,
+      "sha256": "e94d53f73d6c657a27859fc8db856c5c70ec1b6b0f903d4020876b2f4ab183aa"
+    },
+    {
+      "path": "src/assets/a-shanchu1.png",
+      "size": 708,
+      "sha256": "69f28d8a357abaca927bdd88b07b822647da0f43d4272c6f38d130fd6af81bee"
+    },
+    {
+      "path": "src/assets/alipay.png",
+      "size": 900,
+      "sha256": "cd97be991d0dc9fbb884785a82715e9bf2800fa139c782a68c4d36fbf67a9908"
+    },
+    {
+      "path": "src/assets/back-disabled.png",
+      "size": 588,
+      "sha256": "43fe376b8359917de2da5ae34c9cc25ef45e75748dd05167bae29e0e277f5aa3"
+    },
+    {
+      "path": "src/assets/back-enabled.png",
+      "size": 520,
+      "sha256": "45da2c11f3584480ae88f176fffdae6033a7f79f3ce18889913a0be893684a8c"
+    },
+    {
+      "path": "src/assets/download.png",
+      "size": 499,
+      "sha256": "f8ba0e0416854e6e9347429fe7c23c6b561bf1342c5784993ecb3db012b782cf"
+    },
+    {
+      "path": "src/assets/folder.png",
+      "size": 595,
+      "sha256": "804d3920ba062f5a6579b1ca73ce2393edd1d2950d4e67a196f6c2b9aa4d7c49"
+    },
+    {
+      "path": "src/assets/forward-disabled.png",
+      "size": 592,
+      "sha256": "63c260bfce7b2e294cdbc6943e3a46667028221a9c194ea772575fcfe2d80ee3"
+    },
+    {
+      "path": "src/assets/forward-enabled.png",
+      "size": 531,
+      "sha256": "7a9b554965114a226cae391ea9130a734dceefae39ec0c714a87535625f72509"
+    },
+    {
+      "path": "src/assets/icons/a-shanchu1.png",
+      "size": 708,
+      "sha256": "69f28d8a357abaca927bdd88b07b822647da0f43d4272c6f38d130fd6af81bee"
+    },
+    {
+      "path": "src/assets/icons/account-info.png",
+      "size": 698,
+      "sha256": "ed93ad9df805ba608f9310515ca0057ce51f47e263b04e143dca00c95651c5a4"
+    },
+    {
+      "path": "src/assets/icons/account-logout.png",
+      "size": 813,
+      "sha256": "55168e187824f8ecc92781198ce40ea1da905722ce9006a9e17f9e03d9c268d1"
+    },
+    {
+      "path": "src/assets/icons/account-switch.png",
+      "size": 521,
+      "sha256": "684804b400f8b0f870b1e6e169f97fa2f9178397818d49ac74b3ad08c39900e4"
+    },
+    {
+      "path": "src/assets/icons/back-disabled.png",
+      "size": 588,
+      "sha256": "43fe376b8359917de2da5ae34c9cc25ef45e75748dd05167bae29e0e277f5aa3"
+    },
+    {
+      "path": "src/assets/icons/back-enabled.png",
+      "size": 520,
+      "sha256": "45da2c11f3584480ae88f176fffdae6033a7f79f3ce18889913a0be893684a8c"
+    },
+    {
+      "path": "src/assets/icons/certificate-manager-logo.png",
+      "size": 891721,
+      "sha256": "6173664d58fe20380b982e3a244fd2effb5544368e5022bbfaa50e007c468513"
+    },
+    {
+      "path": "src/assets/icons/chat-image.png",
+      "size": 1009,
+      "sha256": "5c3b896086ff9feba88f8df83c194182d407e926a8d1cb125fddf75bedc6efba"
+    },
+    {
+      "path": "src/assets/icons/community-group-qr.jpg",
+      "size": 481373,
+      "sha256": "e3c9ce17c956321072ce99b9957c46018b80377e39a1e13b0e4f11a0af1739ae"
+    },
+    {
+      "path": "src/assets/icons/download.png",
+      "size": 499,
+      "sha256": "f8ba0e0416854e6e9347429fe7c23c6b561bf1342c5784993ecb3db012b782cf"
+    },
+    {
+      "path": "src/assets/icons/folder.png",
+      "size": 595,
+      "sha256": "804d3920ba062f5a6579b1ca73ce2393edd1d2950d4e67a196f6c2b9aa4d7c49"
+    },
+    {
+      "path": "src/assets/icons/forward-disabled.png",
+      "size": 592,
+      "sha256": "63c260bfce7b2e294cdbc6943e3a46667028221a9c194ea772575fcfe2d80ee3"
+    },
+    {
+      "path": "src/assets/icons/forward-enabled.png",
+      "size": 531,
+      "sha256": "7a9b554965114a226cae391ea9130a734dceefae39ec0c714a87535625f72509"
+    },
+    {
+      "path": "src/assets/icons/mashangyou-logo.png",
+      "size": 883311,
+      "sha256": "e4484966157f0a3b6431a157841d25a47102a1379f86e3950e29abe692e181a2"
+    },
+    {
+      "path": "src/assets/icons/nav-browser.png",
+      "size": 1503,
+      "sha256": "a538910a00981bdd6d621854a403598a94d0fa0143f0ef7bc7c18d1ccd5fec8b"
+    },
+    {
+      "path": "src/assets/icons/nav-developer-account.png",
+      "size": 1181,
+      "sha256": "69c774c30c2df045771e996034ab657824c097b797400f92ba7802a2317a25a8"
+    },
+    {
+      "path": "src/assets/icons/nav-help.png",
+      "size": 1850,
+      "sha256": "7dbed00125e7b50e1d7b671ec66e1bc6513b77e96fdc14cb2c5a487ca07421d1"
+    },
+    {
+      "path": "src/assets/icons/nav-home.png",
+      "size": 819,
+      "sha256": "0190abe00ca6996063807f9bf95a2ef6f12d5133ffd274ad2a420d97ffcaad37"
+    },
+    {
+      "path": "src/assets/icons/nav-one-click.png",
+      "size": 1486,
+      "sha256": "c75d3e6eb82edc851b6e8d32da92da7b7e663f2d14c4d68e9b6918c9455f477d"
+    },
+    {
+      "path": "src/assets/icons/nav-proxy.png",
+      "size": 1627,
+      "sha256": "06977f5b010461129bb1880357d60aecd4c6d11f2122e191030775fea69129dd"
+    },
+    {
+      "path": "src/assets/icons/nav-settings.png",
+      "size": 2049,
+      "sha256": "a3be9f1b8d8269d1199828b5588431b1ad71d27831b8f5c135f2ba6de811fe8b"
+    },
+    {
+      "path": "src/assets/icons/nav-similarity.png",
+      "size": 1358,
+      "sha256": "b7fb19ea1abfb58016a6695782702c94d3b53d8881229ccdc23acdd99c2eec5d"
+    },
+    {
+      "path": "src/assets/icons/nav-upload.png",
+      "size": 1294,
+      "sha256": "ed75f9a7f00e3e5ca7723862a82f681501e2d2ec6e08fa2571b87a8a11ae3816"
+    },
+    {
+      "path": "src/assets/icons/refresh.png",
+      "size": 991,
+      "sha256": "640baf485f93e405bc05b567658901f927cb4f14ab8a1bf1a3d317f155d69b14"
+    },
+    {
+      "path": "src/assets/icons/scan-verify.png",
+      "size": 1289,
+      "sha256": "73268627f639c4e266cbfdda5e757910f1c5c9825156124ece51cbd6b424ef4c"
+    },
+    {
+      "path": "src/assets/icons/sidebar-apps-active.png",
+      "size": 1405,
+      "sha256": "cbfac0f892a7a24383184b7c910fcdd717c7b663911bd2c159d0ddc0dedd8b5d"
+    },
+    {
+      "path": "src/assets/icons/sidebar-apps.png",
+      "size": 1315,
+      "sha256": "1e3bad0008855d87ea8e610340329c823215a9e99351c645414bd3d42464c853"
+    },
+    {
+      "path": "src/assets/icons/sidebar-bundle-active.png",
+      "size": 1516,
+      "sha256": "5f921a4f101bad8012db2ba3779c779be64419c80695b78c513e1550ff4bab9e"
+    },
+    {
+      "path": "src/assets/icons/sidebar-bundle.png",
+      "size": 1483,
+      "sha256": "3ecc252901d98cabb08f7d3355e0f980a2fae60d72714ca2729b5da711a9d45e"
+    },
+    {
+      "path": "src/assets/icons/sidebar-certificates-active.png",
+      "size": 1121,
+      "sha256": "78d80639d9b7c16533a55b2ef3a41fafe839e3e913527e08acb5b3a911782916"
+    },
+    {
+      "path": "src/assets/icons/sidebar-certificates.png",
+      "size": 1085,
+      "sha256": "d49196c56889725c9a2226be186ad214c59b5535f6cebf0f2b8f09438f1272d3"
+    },
+    {
+      "path": "src/assets/icons/sidebar-devices-active.png",
+      "size": 1186,
+      "sha256": "8166a68c93f952e9d25992643b04a24bc1e0173e2625b1c69a32440ff71f3d90"
+    },
+    {
+      "path": "src/assets/icons/sidebar-devices.png",
+      "size": 987,
+      "sha256": "0f53d7c3fa888b548302720dbd9f350cd6cba30d6356c626a0fa629024a13062"
+    },
+    {
+      "path": "src/assets/icons/sidebar-home-active.png",
+      "size": 1201,
+      "sha256": "981958b1345eb67dc45c1992f701c103137299b02822f85f1391b59cd2a58c30"
+    },
+    {
+      "path": "src/assets/icons/sidebar-home.png",
+      "size": 1175,
+      "sha256": "a364d9aa92c1bcb704dcc0f7f3ffcf86166e8fb36f4942bdf8e0d2ff1df164b7"
+    },
+    {
+      "path": "src/assets/icons/sidebar-one-click-active.png",
+      "size": 1594,
+      "sha256": "4ea525024516b891a1976de39eeed2e670c4e8cbb576a3e33f2023182984596e"
+    },
+    {
+      "path": "src/assets/icons/sidebar-one-click.png",
+      "size": 1486,
+      "sha256": "c75d3e6eb82edc851b6e8d32da92da7b7e663f2d14c4d68e9b6918c9455f477d"
+    },
+    {
+      "path": "src/assets/icons/sidebar-profiles-active.png",
+      "size": 1150,
+      "sha256": "b10f3d56f71af53b2c74bdb1f41192fd710492c76b1c85a8a2814aeee9fa9499"
+    },
+    {
+      "path": "src/assets/icons/sidebar-profiles.png",
+      "size": 1113,
+      "sha256": "a9ff28d63ac0874fca6bf3aa8c2130c9d5c5cc36288941ca37b530959390f658"
+    },
+    {
+      "path": "src/assets/icons/sidebar-review-active.png",
+      "size": 1812,
+      "sha256": "ab1d12fdf2e8f460d360e5f7a8a9a7f4d28663c0712802bfe9482dec07060fc5"
+    },
+    {
+      "path": "src/assets/icons/sidebar-review.png",
+      "size": 1760,
+      "sha256": "a4875feef74e95ae3039e0d0a28be51d6220f7bb6cdbc3009ea5fed3fe31333f"
+    },
+    {
+      "path": "src/assets/icons/windows.png",
+      "size": 766,
+      "sha256": "43acb11f1d282e0855d9fc6bcd845ac7ca19eadacefb6692c991ab146d481a7e"
+    },
+    {
+      "path": "src/assets/icons/xiugai.png",
+      "size": 466,
+      "sha256": "4ddb7ddc982dde215735063ef33ed0bc52a4dbe52b35569d85a423a70041af4d"
+    },
+    {
+      "path": "src/assets/mashangyou-logo.png",
+      "size": 883311,
+      "sha256": "e4484966157f0a3b6431a157841d25a47102a1379f86e3950e29abe692e181a2"
+    },
+    {
+      "path": "src/assets/refresh.png",
+      "size": 991,
+      "sha256": "640baf485f93e405bc05b567658901f927cb4f14ab8a1bf1a3d317f155d69b14"
+    },
+    {
+      "path": "src/assets/weixin.png",
+      "size": 1300,
+      "sha256": "f2db1d91a968a1994ca2178f8b29dbf03f185077e3adf2cc4abecb95611529ad"
+    },
+    {
+      "path": "src/assets/windows.png",
+      "size": 766,
+      "sha256": "43acb11f1d282e0855d9fc6bcd845ac7ca19eadacefb6692c991ab146d481a7e"
+    },
+    {
+      "path": "src/assets/xiugai.png",
+      "size": 466,
+      "sha256": "4ddb7ddc982dde215735063ef33ed0bc52a4dbe52b35569d85a423a70041af4d"
+    },
+    {
+      "path": "src/bookmark-manager-preload.js",
+      "size": 707,
+      "sha256": "7c5bb0720a4824bcbf361d45a177b3522ac7956755106292e743237dca6baeaa"
+    },
+    {
+      "path": "src/browser-preload.js",
+      "size": 5488,
+      "sha256": "00fe675c19395e7a4bd8912ac028eb3190451eb1a5bda8a8b5feb7a756a4be58"
+    },
+    {
+      "path": "src/browser.html",
+      "size": 24924,
+      "sha256": "6246ba1d8cc6702e195e409f4e7786677565eaf25b7a7cd4d25e9f4bfc30daa1"
+    },
+    {
+      "path": "src/browser.js",
+      "size": 73712,
+      "sha256": "1ff2f24c69b6defe0630c6c2db3873f9ab91f3366ad6c1186d75ab53194df560"
+    },
+    {
+      "path": "src/certificate-manager.html",
+      "size": 406970,
+      "sha256": "25c34b2a699762dda2599ee5d41c77d8ca509c2c7f974e091ebfbd63686df549"
+    },
+    {
+      "path": "src/certificate-manager.js",
+      "size": 1061572,
+      "sha256": "84020e348cf60623b9ac47ab71026f4a0d1e2ead8be77ffb845f48962466515a"
+    },
+    {
+      "path": "src/certificate-preload.js",
+      "size": 20632,
+      "sha256": "b5f061126cab067bdab5ed015b4719704579ccefb5563bc224c0d34f35b02169"
+    },
+    {
+      "path": "src/developer-account-manager.html",
+      "size": 11396,
+      "sha256": "ea9b05aac9c15a80810d0c3e57e5acb4613268d33a57e771407c419ca1516649"
+    },
+    {
+      "path": "src/developer-account-manager.js",
+      "size": 28278,
+      "sha256": "581f31673b41637623a10bb83f0b6d827d96b77df95a2ec161c2ab54e79ea574"
+    },
+    {
+      "path": "src/developer-account-preload.js",
+      "size": 1453,
+      "sha256": "29576106310850e943713a638045a9a2d3d95115b444d7272f8be70453ac2722"
+    },
+    {
+      "path": "src/generate-apple-csr.py",
+      "size": 1941,
+      "sha256": "b1930142b96ede715a61b4e89d00485520497d154a8515848d289d98a18b289c"
+    },
+    {
+      "path": "src/ipa-upload-state.js",
+      "size": 13127,
+      "sha256": "d887fc9b55fda247bf6d59a79e3f93f704b4da6b71ce857ab134705fd6e89c20"
+    },
+    {
+      "path": "src/ipa-upload-worker.js",
+      "size": 17627,
+      "sha256": "31c82395c50438d8cd1a8627bb83fbe2ae8bb56ee924f2667b31606d213b0c95"
+    },
+    {
+      "path": "src/main.js",
+      "size": 1005620,
+      "sha256": "0c7a03c324dc05f4bea885cbd824d9c3345d20b7c6a20f6a1aa777427587da66"
+    },
+    {
+      "path": "src/preload.js",
+      "size": 6667,
+      "sha256": "25ac3204bc9b93f54f68daae58354d00a926a96257e0ccc37b8c4a429f8f55b9"
+    },
+    {
+      "path": "src/product-contact-client.js",
+      "size": 1432,
+      "sha256": "6c3f5f408f87b8be10d50d0638329ac278a1d2d1ba02a0bbc748e6001058311a"
+    },
+    {
+      "path": "src/product-contact-init.js",
+      "size": 546,
+      "sha256": "f6fbedea4b3611ec054a9d663de2f28e80ddfcb577436be81bd535f8c1c4696f"
+    },
+    {
+      "path": "src/product-contacts.js",
+      "size": 4411,
+      "sha256": "e77483d3548d384e867c6c52a98b0a97b0d8674aa83c45cd6627d9e21331306c"
+    },
+    {
+      "path": "src/renderer.html",
+      "size": 151293,
+      "sha256": "e81d3b5e552d476bd0b917b83bbc27d8ba061283a1c1ffc79d77be313735561a"
+    },
+    {
+      "path": "src/renderer.js",
+      "size": 213277,
+      "sha256": "81629e4ae6c63d20895fe31b6a2f70d3060f5de1aaec198dedf647ecfc9444d5"
+    },
+    {
+      "path": "src/testflight-service.js",
+      "size": 16205,
+      "sha256": "82208113bde4e2b4406152b5f4389463cbace54b68f23a8d45f6ac1d0303ebea"
+    },
+    {
+      "path": "src/testflight-ui.js",
+      "size": 53696,
+      "sha256": "6d3ff82507cb1651bc4a85783d67fb1db74af7e8e02e5458a7e96fc367873d78"
+    },
+    {
+      "path": "src/testflight.css",
+      "size": 14141,
+      "sha256": "d6dcfac7a5d2eb708f0be54af20c0b92e50043b029ea231f86a5987a99ca25e4"
+    },
+    {
+      "path": "src/webview-preload.js",
+      "size": 20165,
+      "sha256": "78307cecf085eff6a52fc31f6fdfb994627fa86993919167099774c38797c5a9"
+    },
+    {
+      "path": "tests/app-age-rating-editable.test.js",
+      "size": 7407,
+      "sha256": "9dfe3b13a65a19e0601c7118a27c8eca15faf8dd621d6e29d704acecafa42488"
+    },
+    {
+      "path": "tests/app-age-rating-save.test.js",
+      "size": 3256,
+      "sha256": "6b5153182200480130984cd3a069900016f9a61ae994f23e22d13c0d15f297a1"
+    },
+    {
+      "path": "tests/app-create-and-bank-account.test.js",
+      "size": 2816,
+      "sha256": "3246f0bc8c07c08ee484a1832e2f480699e8a206e84437187a58d1876b6e33f4"
+    },
+    {
+      "path": "tests/app-description-validation.test.js",
+      "size": 5731,
+      "sha256": "d2d635eff026d163f7f727996a9a143f85a0891f7829fead5c19bb1316616a20"
+    },
+    {
+      "path": "tests/app-detail-loading.test.js",
+      "size": 8836,
+      "sha256": "b5b81cf9755fbc17a1e2a2e8b025dd57ea62ec30f0336682f5c2c790dbcc2ab2"
+    },
+    {
+      "path": "tests/app-icp-confirmation.test.js",
+      "size": 5113,
+      "sha256": "cdc77c00412533570bf130dafef5fe5721755395de37c86c49af07fccca16bf5"
+    },
+    {
+      "path": "tests/app-media-preview-layout.test.js",
+      "size": 789,
+      "sha256": "66f852de34530df62afe2ef00b887c9496c44cd3d9db77c97d2a102f5adeb0af"
+    },
+    {
+      "path": "tests/app-pricing-page.test.js",
+      "size": 12740,
+      "sha256": "c8ab8740ef5add0c2765d8ddde543eed45e899d286df5f121aaeff21a11da575"
+    },
+    {
+      "path": "tests/app-review-attachments.test.js",
+      "size": 19048,
+      "sha256": "2407faa65b66507a54ecc3dd9fe15a0bfbddb6ecffc4d5e38127371948b3c432"
+    },
+    {
+      "path": "tests/app-review-warning.test.js",
+      "size": 8890,
+      "sha256": "47cb37af568cf24eeebb61b3adf21db59083d540728193868709366e008f2a0a"
+    },
+    {
+      "path": "tests/app-save-feedback.test.js",
+      "size": 19992,
+      "sha256": "b6239c75f60087eb462eb7438d11c09413d80e236689c92301f444fe76597c1f"
+    },
+    {
+      "path": "tests/app-screenshot-sizes.test.js",
+      "size": 3037,
+      "sha256": "17bef16c65a6647f480bc5fd729d47d864712a81b18d115d07763790d6c71cee"
+    },
+    {
+      "path": "tests/apple-auth-client.test.js",
+      "size": 83774,
+      "sha256": "18ba02f480fbfcac5b75f4c80f9c8f41b3da0f1d0e464319669577c217c1c103"
+    },
+    {
+      "path": "tests/apple-login-redirect.test.js",
+      "size": 18771,
+      "sha256": "25c4fd0ea7b7df8181a4273543ad4bd2b4d45e56b569e07ad03dc7b3d49d22eb"
+    },
+    {
+      "path": "tests/apple-network-restore.test.js",
+      "size": 4146,
+      "sha256": "3a6423bd0701b3fb1769cc4052a386b7fb32ff3bf3885237d3c8359a990baf5e"
+    },
+    {
+      "path": "tests/apple-password-privacy.test.js",
+      "size": 1835,
+      "sha256": "5cf80af87d275b2c6ad8df3169b5b81d8ac48d87b3556fbc6e75998e8b1d7116"
+    },
+    {
+      "path": "tests/bookmark-manager-security.test.js",
+      "size": 710,
+      "sha256": "a045d61d34c4e367e544f8b72f133c1b3138cb86c79be4dc987d1f59cf752180"
+    },
+    {
+      "path": "tests/business-agreement-mfa.test.js",
+      "size": 7257,
+      "sha256": "76ca491116bab2b85f23337d35ae4dc916cae4265301dbf5a5a879d522ba3c7b"
+    },
+    {
+      "path": "tests/certificate-manager-input-and-udid.test.js",
+      "size": 24324,
+      "sha256": "c96809d1971c80610342c8a7a41b2c60f2d4803fa4169c56ffa0d5f31776ae31"
+    },
+    {
+      "path": "tests/certificate-manager-running.test.js",
+      "size": 3419,
+      "sha256": "7b99e0d2a6d7fea7ae41ea424445501497502f5cf63cab02d5d65d1bfcef8948"
+    },
+    {
+      "path": "tests/fixtures/apple-framework-version-error.log",
+      "size": 1207,
+      "sha256": "517e0dc9032b5dcf64ee823ce37b1251ca6d8e09813ad9f2a95483675a15dbf8"
+    },
+    {
+      "path": "tests/fixtures/testflight-har.json",
+      "size": 31380,
+      "sha256": "fa64863f6b1b510711b883e940478b22c1f52dc1179a7a0b03535403d86e23a2"
+    },
+    {
+      "path": "tests/home-access-elapsed.test.js",
+      "size": 2387,
+      "sha256": "8cb372777f0022e0466cc70c84f0c1a39f1a61a0fa4a0435815d40877853ceba"
+    },
+    {
+      "path": "tests/home-local-loading.test.js",
+      "size": 4548,
+      "sha256": "38e7bb5d63a0a95a89ceeead9c4720a78a4e057c65a7f6e96707bfd84f81181a"
+    },
+    {
+      "path": "tests/home-membership-loading.test.js",
+      "size": 12658,
+      "sha256": "1c95fd5eb98f5541fc7fd103660ebdd028c913a70b393c2847593b1dd4ae3719"
+    },
+    {
+      "path": "tests/ipa-upload-ai-copy.test.js",
+      "size": 5735,
+      "sha256": "d86fcfbe4199bdcc1ffe4e4e95ae8d12e1db77dda77425dce349c2a41fe0fb90"
+    },
+    {
+      "path": "tests/ipa-upload-apple-state.test.js",
+      "size": 34412,
+      "sha256": "613a5bc36e2c4e74bb86cc9194fe73d67ab5967b3c4d17a57e2b212afbce359f"
+    },
+    {
+      "path": "tests/ipa-upload-worker.test.js",
+      "size": 19529,
+      "sha256": "4e98489e103868025ccf2b56fe8a1ef84d0e6a26a57104c369298e0bd911d566"
+    },
+    {
+      "path": "tests/mac-certificate-revoke.test.js",
+      "size": 2004,
+      "sha256": "a79d69ecba2fde1c7f3f4093636ba455dfa98a6a2043b98e6f37412f33baeb1f"
+    },
+    {
+      "path": "tests/membership-expire-display.test.js",
+      "size": 777,
+      "sha256": "5521d0486ffb194302fdd28e6359d5afeccb831166286fa244a9040da50ace2f"
+    },
+    {
+      "path": "tests/review-app-selector-pagination.test.js",
+      "size": 1919,
+      "sha256": "a6adfa72a102ec9eff67ec8865f1f1c45c74ed8a87fe7f2c2fc7bf5a835b6e2a"
+    },
+    {
+      "path": "tests/review-bind-and-browser-icon.test.js",
+      "size": 15589,
+      "sha256": "9101698d544abf75ab86c65550f8af451581d281d3d6d2f012e3253bb8efdce3"
+    },
+    {
+      "path": "tests/review-submission-build.test.js",
+      "size": 2402,
+      "sha256": "118269e8af5d6d7978287d263eec1742d8e84656b819a391dd24667f902cf02c"
+    },
+    {
+      "path": "tests/sidebar-page-loading.test.js",
+      "size": 2764,
+      "sha256": "64d4ae3cfc25eb380af48ac69949f11b43202972cf41189a32ee524f95b20902"
+    },
+    {
+      "path": "tests/tax-business-flow.test.js",
+      "size": 22403,
+      "sha256": "869c9efe115bee2e4f4676874446a9710c946f1b4b7befb555657e070845e7cc"
+    },
+    {
+      "path": "tests/testflight-upload-list.test.js",
+      "size": 11763,
+      "sha256": "a2cd603ea51e3a1f29954a8dfbc02fb9dcfca6ed92d9d91e3c14f2191057052c"
+    },
+    {
+      "path": "tests/testflight.test.js",
+      "size": 12612,
+      "sha256": "9fc2484dba26a0b78ed11850e1e66f086e8eb940eef76f865ec99ac983c4ba60"
+    },
+    {
+      "path": "tests/transporter-build-guard.test.js",
+      "size": 4553,
+      "sha256": "4222063e48b5579bd7f07a07fe509fa47c7bd2adb1bea68800b4260a043f096c"
+    },
+    {
+      "path": "transporter_locator.py",
+      "size": 4125,
+      "sha256": "77f8ded275ff0efbe407f55f54ef8871710dcf2d2a1b14a2698d940febecb155"
+    },
+    {
+      "path": "tsconfig.json",
+      "size": 228,
+      "sha256": "cd4c59ae08628cba94691af00e57de0fe439861e3503cc0f3bc539f96b4b8220"
+    },
+    {
+      "path": "uploader.py",
+      "size": 24797,
+      "sha256": "42bfd9c57504263dba54c114e84b0f5425de3ba626a6c1d05cdf97b7bedd2b7c"
+    },
+    {
+      "path": "vendor/ipa-upload-guard/LICENSE.txt",
+      "size": 1651,
+      "sha256": "34b8dd2e1b4b5f822ba633602676297fa82328d9438ba4d7336ec7393d212e06"
+    }
+  ]
+}
